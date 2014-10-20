@@ -1,0 +1,41 @@
+print
+Pat
+----------
+Patrick
+Jimmy
+Jim
+Jack
+Bill
+Rebecca
+Alice
+Tate
+
+Lester
+----------
+Cam
+
+Xavier
+----------
+Megan
+Meghan
+Jonno
+Joann
+Ann
+Anna
+
+Tom
+----------
+Kevin
+Tim
+Raj
+Amman
+Becca
+Alan
+Alex
+Ellen
+Wen
+Prithvi
+
+limited version1 15
+Limited Infection Error.
+Limited infection for 15 people not possible.
