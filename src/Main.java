@@ -8,7 +8,21 @@ public class Main {
 	public static void main(String[] args) throws IOException,
 			NoSuchMethodException, SecurityException, IllegalAccessException,
 			IllegalArgumentException, InvocationTargetException {
+		
+		Graph classrooms = createGraph();
 
+		while(!Command.isEnd()){
+			Command.runCommand(Command.fetchCommand(), classrooms);
+			if(Command.isReverted()){
+				classrooms = createGraph();
+				Command.setRevert();
+			}
+		}
+
+
+	}
+	
+	public static Graph createGraph() throws IOException{
 		Parser parser = new Parser();
 
 		Map<Node, List<Node>> adjList = parser.parseInput("Classrooms.txt");
@@ -18,12 +32,8 @@ public class Main {
 
 		Graph classrooms = new Graph(adjList, teacherNodes, studentNodes,
 				nodeCount);
-
-		while(!Command.isEnd()){
-			Command.runCommand(Command.fetchCommand(), classrooms);
-		}
-
-
+		
+		return classrooms;
 	}
 
 }

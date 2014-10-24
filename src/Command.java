@@ -9,6 +9,7 @@ public class Command {
 
 	private static Scanner userInputScanner;
 	private static boolean isEnd = false;
+	private static boolean isReverted = false;
 
 	public static String[] fetchCommand() {
 		userInputScanner = new Scanner(System.in);
@@ -24,6 +25,7 @@ public class Command {
 
 		if (command.length == 1) {
 			checkEnd(command[0]);
+			checkRevert(command[0]);
 			if (isEnd)
 				return;
 			runGraphCommands(command, classrooms);
@@ -93,8 +95,21 @@ public class Command {
 			isEnd = true;
 		}
 	}
+	
+	private static void checkRevert(String revert){
+		if (revert.toLowerCase().equals("revert")) {
+			isReverted = true;
+		}
+	}
 
 	public static boolean isEnd() {
 		return isEnd;
+	}
+	
+	public static boolean isReverted() {
+		return isReverted;
+	}
+	public static void setRevert() {
+		isReverted = false;
 	}
 }
